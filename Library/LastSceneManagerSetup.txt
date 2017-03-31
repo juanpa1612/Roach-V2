@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Nivel1_Chumi.unity
+  isLoaded: 1
+  isActive: 1
