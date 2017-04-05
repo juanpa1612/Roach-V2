@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickUp : MonoBehaviour {
 
     public int distanceToItem;
     public GameObject carta;
+	public GameObject pasoDeNivel;
 	private float timerFosforo;
 	private GameObject lightGameObject;
 	public ParticleSystem fosforo;
 	//public Light luz;
-	private bool hayLuz;
+	private bool hayLuz, TEST;
 	public int cantFosforos;
-
+	public float veneno;
+	GUIStyle Dibujarmensaje;
+	public string EscenaSiguiente, EscenaActual;
 	// Use this for initialization
 	void Start ()
     {
@@ -28,12 +32,19 @@ public class PickUp : MonoBehaviour {
 		lightComp.bounceIntensity = 1;
 		lightGameObject.gameObject.GetComponent<Light> ().enabled = false;
 		fosforo.Stop();
+		Dibujarmensaje = new GUIStyle ();
+		Dibujarmensaje.normal.textColor = Color.white;
+		Dibujarmensaje.fontSize = 30;
 	}
-	
+
+
 	// Update is called once per frame
 	void Update ()
     {
-		
+		veneno -= Time.deltaTime;
+		if (veneno <= 0) {
+			SceneManager.LoadScene (EscenaActual);
+		}
 		if(hayLuz){	
 			timerFosforo -= Time.deltaTime;
 			fosforo.transform.position = this.transform.position+this.transform.forward*1;
@@ -47,26 +58,38 @@ public class PickUp : MonoBehaviour {
 		if (timerFosforo <= 0) {
 			DestruirFosforo ();
 		}
+	}
 
+	void OnGUI(){
+		if (TEST) {
+			Rect RectMensaje = new Rect (520, 520, 100, 100);
+			GUI.Label (RectMensaje, "Presiona R para pasar al siguiente cuarto", Dibujarmensaje);
+		}
 	}
 
     void Collect ()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            RaycastHit hit;
-            Ray rayo = Camera.main.ScreenPointToRay(Input.mousePosition);
+    { 
+			RaycastHit hit;
+			Ray rayo = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-            if (Physics.Raycast(rayo,out hit,distanceToItem))
-            {
-                if (hit.collider.gameObject == carta)
-                {
-                    Debug.Log("PickUp");
-                    carta.SetActive(false);
+		if (Physics.Raycast (rayo, out hit, distanceToItem)) {
+			if (hit.collider.gameObject == carta) {
+				if (Input.GetMouseButtonUp (0)) {	
+					Debug.Log ("PickUp");
+					carta.SetActive (false);
+				}
                     
-                }
-            }
-        }
+			}
+
+			if (hit.collider.gameObject == pasoDeNivel) {
+				TEST = true;
+				if (Input.GetKeyUp (KeyCode.R)) {
+					SceneManager.LoadScene (EscenaSiguiente);
+				}
+			}
+		} else {
+			TEST = false;		
+		}
     }
 
 	void CrearFosforo(){
@@ -83,5 +106,9 @@ public class PickUp : MonoBehaviour {
 		fosforo.Stop ();
 		hayLuz = false;
 		timerFosforo = 5;
+	}
+
+	public void sumarFosforos(int numSumar){
+		cantFosforos += numSumar;
 	}
 }
