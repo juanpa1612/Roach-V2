@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 016ff00e992f8354aa6448641e8824dc
+timeCreated: 1491839559
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Basura
+    100002: Basura2
+    100004: Basura3
+    100006: Caja
+    100008: Caja2
+    100010: CajaElectrica
+    100012: CajaMadera
+    100014: Circle_001
+    100016: Circle_002
+    100018: Circle_003
+    100020: Circle_004
+    100022: Circle_005
+    100024: Circle_006
+    100026: Electricidad
+    100028: Electricidad2
+    100030: Escalera
+    100032: Llave
+    100034: Llave_001
+    100036: Plane
+    100038: silla
+    100040: //RootNode
+    100042: Tapa
+    100044: Tuberia
+    100046: Tuberia2
+    100048: Tubo
+    100050: Tubo2
+    100052: Tubo3
+    400000: Basura
+    400002: Basura2
+    400004: Basura3
+    400006: Caja
+    400008: Caja2
+    400010: CajaElectrica
+    400012: CajaMadera
+    400014: Circle_001
+    400016: Circle_002
+    400018: Circle_003
+    400020: Circle_004
+    400022: Circle_005
+    400024: Circle_006
+    400026: Electricidad
+    400028: Electricidad2
+    400030: Escalera
+    400032: Llave
+    400034: Llave_001
+    400036: Plane
+    400038: silla
+    400040: //RootNode
+    400042: Tapa
+    400044: Tuberia
+    400046: Tuberia2
+    400048: Tubo
+    400050: Tubo2
+    400052: Tubo3
+    2300000: Basura
+    2300002: Basura2
+    2300004: Basura3
+    2300006: Caja
+    2300008: Caja2
+    2300010: CajaElectrica
+    2300012: CajaMadera
+    2300014: Circle_001
+    2300016: Circle_002
+    2300018: Circle_003
+    2300020: Circle_004
+    2300022: Circle_005
+    2300024: Circle_006
+    2300026: Electricidad
+    2300028: Electricidad2
+    2300030: Escalera
+    2300032: Llave
+    2300034: Llave_001
+    2300036: Plane
+    2300038: silla
+    2300040: Tapa
+    2300042: Tuberia
+    2300044: Tuberia2
+    2300046: Tubo
+    2300048: Tubo2
+    2300050: Tubo3
+    3300000: Basura
+    3300002: Basura2
+    3300004: Basura3
+    3300006: Caja
+    3300008: Caja2
+    3300010: CajaElectrica
+    3300012: CajaMadera
+    3300014: Circle_001
+    3300016: Circle_002
+    3300018: Circle_003
+    3300020: Circle_004
+    3300022: Circle_005
+    3300024: Circle_006
+    3300026: Electricidad
+    3300028: Electricidad2
+    3300030: Escalera
+    3300032: Llave
+    3300034: Llave_001
+    3300036: Plane
+    3300038: silla
+    3300040: Tapa
+    3300042: Tuberia
+    3300044: Tuberia2
+    3300046: Tubo
+    3300048: Tubo2
+    3300050: Tubo3
+    4300000: Plane
+    4300002: Llave
+    4300004: Basura
+    4300006: Basura2
+    4300008: Basura3
+    4300010: Tapa
+    4300012: Tubo
+    4300014: Tubo2
+    4300016: Tubo3
+    4300018: Electricidad2
+    4300020: Circle_006
+    4300022: Electricidad
+    4300024: Circle_005
+    4300026: Circle_004
+    4300028: Circle_003
+    4300030: Circle_002
+    4300032: Circle_001
+    4300034: Caja
+    4300036: silla
+    4300038: CajaMadera
+    4300040: Caja2
+    4300042: Llave_001
+    4300044: CajaElectrica
+    4300046: Escalera
+    4300048: Tuberia
+    4300050: Tuberia2
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
