@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Escenas/Nivel1_Chumi.unity
+- path: Assets/Escenas/LoadLevel4.unity
   isLoaded: 1
   isActive: 1

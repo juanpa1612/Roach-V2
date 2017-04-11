@@ -49,7 +49,7 @@ public class GUICarta : MonoBehaviour {
 			if (!Carta.active) {
 				TimePrendido -= Time.deltaTime;
 				Dibujarmensaje.normal.textColor = Color.white;
-				sumarFosforo ();
+				//sumarFosforo ();
 			}
 		}
 
