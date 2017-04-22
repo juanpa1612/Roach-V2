@@ -17,6 +17,7 @@ public class PickUp : MonoBehaviour {
 	public float veneno;
 	GUIStyle Dibujarmensaje;
 	public string EscenaSiguiente, EscenaActual;
+	public GameObject Match;
 	// Use this for initialization
 	void Start ()
     {
@@ -47,8 +48,8 @@ public class PickUp : MonoBehaviour {
 		}
 		if(hayLuz){	
 			timerFosforo -= Time.deltaTime;
-			fosforo.transform.position = this.transform.position+this.transform.forward*1;
-			fosforo.transform.position.Set (fosforo.transform.position.x, 30, fosforo.transform.position.z);
+			fosforo.transform.position = Match.transform.position;
+			fosforo.transform.position.Set (fosforo.transform.position.x, fosforo.transform.position.y , fosforo.transform.position.z);
 			lightGameObject.transform.position = fosforo.transform.position;
 		}
         Collect();
