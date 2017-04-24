@@ -18,6 +18,9 @@ public class PickUp : MonoBehaviour {
 	GUIStyle Dibujarmensaje;
 	public string EscenaSiguiente, EscenaActual;
 	public GameObject Match;
+
+    private GameObject barraFosforo;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -36,6 +39,9 @@ public class PickUp : MonoBehaviour {
 		Dibujarmensaje = new GUIStyle ();
 		Dibujarmensaje.normal.textColor = Color.white;
 		Dibujarmensaje.fontSize = 30;
+
+        barraFosforo = GameObject.Find("BarraLlena");
+        
 	}
 
 
@@ -53,12 +59,15 @@ public class PickUp : MonoBehaviour {
 			lightGameObject.transform.position = fosforo.transform.position;
 		}
         Collect();
-		if (Input.GetKeyDown(KeyCode.F)) {
+		if (Input.GetKeyDown(KeyCode.F))
+        {
 			CrearFosforo ();
+            barraFosforo.GetComponent<Animator>().SetBool("Fuego", true);
 		}
 		if (timerFosforo <= 0) {
 			DestruirFosforo ();
-		}
+            barraFosforo.GetComponent<Animator>().SetBool("Fuego", false);
+        }
 	}
 
 	void OnGUI(){
