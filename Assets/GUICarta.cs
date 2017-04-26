@@ -11,6 +11,9 @@ public class GUICarta : MonoBehaviour {
 	private float TimePrendido;
 	private bool sumar, cartita;
 	public Texture imagen;
+	private AudioSource Source;
+	public AudioClip papel;
+	private bool sono;
 	// Use this for initialization
 	void Start () {
 		sePrendio = false;
@@ -23,13 +26,19 @@ public class GUICarta : MonoBehaviour {
 		//Dibujarcarta = new GUIStyle ();
 		//GUI.color = Color.clear;
 		cartita=false;
+		sono = false;
+		Source = GetComponent<AudioSource> ();
+	}
+
+	public bool getCartita(){
+		return cartita;
 	}
 
 	void OnGUI(){
 		Rect RectMensaje = new Rect (520, 520, 100, 100);
 		GUI.Label (RectMensaje, "Podras encontrar mas mensajes en el laberinto",Dibujarmensaje);
 		if (cartita) {
-			GUI.Label (new Rect (520, 100, 600, 500), imagen);
+			GUI.Label (new Rect (520, 100, 800, 500), imagen);
 		}
 	}
 		
@@ -42,6 +51,11 @@ public class GUICarta : MonoBehaviour {
 			sePrendio = true;
 			sumar = true;
 			cartita = true;
+			if (!sono) {
+				Source.clip = papel;
+				Source.Play ();
+				sono = true;
+			}
 			TimePrendido = 2;
 		}
 
@@ -55,6 +69,7 @@ public class GUICarta : MonoBehaviour {
 
 		if (Input.GetKeyUp (KeyCode.E)) {
 			cartita = false;
+			sono = false;
 		}
 	}
 

@@ -12,18 +12,23 @@ public class PickUp : MonoBehaviour {
 	private GameObject lightGameObject;
 	public ParticleSystem fosforo;
 	//public Light luz;
-	private bool hayLuz, TEST;
-	public int cantFosforos;
-	public float veneno;
+	public bool hayLuz, TEST, mostrarCarta;
+	private static int cantFosforos=30;
+	private static float veneno=900;
+	private float venenoStage;
+	private int cantFosforosStage;
 	GUIStyle Dibujarmensaje;
 	public string EscenaSiguiente, EscenaActual;
 	public GameObject Match;
-
+	private float video;
     private GameObject barraFosforo;
+
 
 	// Use this for initialization
 	void Start ()
     {
+		venenoStage = veneno;
+		cantFosforosStage = cantFosforos;
 		timerFosforo = 5;
 		//cantFosforos = 2;
 		hayLuz = false;
@@ -39,17 +44,34 @@ public class PickUp : MonoBehaviour {
 		Dibujarmensaje = new GUIStyle ();
 		Dibujarmensaje.normal.textColor = Color.white;
 		Dibujarmensaje.fontSize = 30;
-
+		video = 81;
         barraFosforo = GameObject.Find("BarraLlena");
+		//saludo = false;
         
 	}
 
+	public int getFosforos(){
+		return cantFosforos;
+	}
+	public float getVeneno(){
+		return veneno;
+	}
 
 	// Update is called once per frame
 	void Update ()
     {
-		veneno -= Time.deltaTime;
+		if (EscenaActual == "Nivel1_Chumi") {
+			video -= Time.deltaTime;
+		} else {
+			video = 0;
+		}
+		if (video <= 0) {
+			
+			veneno -= Time.deltaTime;
+		}
 		if (veneno <= 0) {
+			veneno = venenoStage;
+			cantFosforos = cantFosforosStage;
 			SceneManager.LoadScene (EscenaActual);
 		}
 		if(hayLuz){	
@@ -72,8 +94,12 @@ public class PickUp : MonoBehaviour {
 
 	void OnGUI(){
 		if (TEST) {
-			Rect RectMensaje = new Rect (520, 520, 100, 100);
+			Rect RectMensaje = new Rect (520, 470, 100, 100);
 			GUI.Label (RectMensaje, "Presiona R para pasar al siguiente cuarto", Dibujarmensaje);
+		}
+		if (mostrarCarta) {
+			Rect RectMensaje = new Rect (520, 470, 100, 100);
+			GUI.Label (RectMensaje, "Haz click para leer la carta", Dibujarmensaje);
 		}
 	}
 
@@ -84,12 +110,13 @@ public class PickUp : MonoBehaviour {
 
 		if (Physics.Raycast (rayo, out hit, distanceToItem)) {
 			if (hit.collider.gameObject == carta) {
+				mostrarCarta = true;
 				if (Input.GetMouseButtonUp (0)) {	
 					Debug.Log ("PickUp");
 					carta.SetActive (false);
 				}
                     
-			}
+			} 
 
 			if (hit.collider.gameObject == pasoDeNivel) {
 				TEST = true;
@@ -99,6 +126,7 @@ public class PickUp : MonoBehaviour {
 			}
 		} else {
 			TEST = false;		
+			mostrarCarta = false;
 		}
     }
 

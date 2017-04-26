@@ -22,7 +22,7 @@ public class GUIController : MonoBehaviour {
 	void Start () {
 		Player = GameObject.FindGameObjectWithTag ("Player");
         
-        cantFosforosPlayer = Player.GetComponent<PickUp>().cantFosforos;
+		cantFosforosPlayer = Player.GetComponent<PickUp>().getFosforos();
         
 		Dibujarfosforos = new GUIStyle ();
 		Dibujarfosforos.normal.textColor = Color.white;
@@ -34,13 +34,13 @@ public class GUIController : MonoBehaviour {
 		DibujarReload = new GUIStyle ();
 		DibujarReload.normal.textColor = Color.clear;
 		DibujarReload.fontSize = 120;
-		timer = Player.GetComponent<PickUp>().veneno;
+		timer = Player.GetComponent<PickUp>().getVeneno();
 
         //Optimización Texto Fosforos
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
 
-        texFosforos.text = Player.GetComponent<PickUp>().cantFosforos.ToString();
+		texFosforos.text = Player.GetComponent<PickUp>().getFosforos().ToString();
         texTiempo.text = string.Format ("{0:00}:{1:00}", minutes, seconds);
 
     }
@@ -76,8 +76,8 @@ public class GUIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		cantFosforosPlayer = Player.GetComponent<PickUp>().cantFosforos;
-		timer = Player.GetComponent<PickUp>().veneno;
+		cantFosforosPlayer = Player.GetComponent<PickUp>().getFosforos();
+		timer = Player.GetComponent<PickUp>().getVeneno();
 		if (timer <= 1)
         {
 			DibujarReload.normal.textColor = Color.red;
@@ -86,7 +86,7 @@ public class GUIController : MonoBehaviour {
         //Optimización Texto Fosforos
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
-        texFosforos.text = Player.GetComponent<PickUp>().cantFosforos.ToString();
+		texFosforos.text = Player.GetComponent<PickUp>().getFosforos().ToString();
         texTiempo.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
     }
