@@ -132,7 +132,7 @@ Material:
       second: 0
     - first:
         name: _Gloss
-      second: 0.7
+      second: 0.512
     - first:
         name: _GlossMapScale
       second: 1
@@ -147,7 +147,7 @@ Material:
       second: 1
     - first:
         name: _Metallic
-      second: 0
+      second: 0.24
     - first:
         name: _Mode
       second: 0

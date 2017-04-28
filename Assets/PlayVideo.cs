@@ -22,13 +22,13 @@ public class PlayVideo : MonoBehaviour {
 
 	}
 
-
+	//Si
 	public void Countdown ()
 	{
 		if (Count == true) {
 			timer += Time.deltaTime;
 
-			if (timer >= 81) {
+			if (timer >= 83) {
 				Luz1.enabled = false;
 				Luz2.enabled = false;
 				timer = 0;
