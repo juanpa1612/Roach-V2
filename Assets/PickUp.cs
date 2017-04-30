@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour {
 
@@ -23,11 +24,14 @@ public class PickUp : MonoBehaviour {
 	private float video;
     private GameObject barraFosforo;
 
+    public Text txtClick;
 
 	// Use this for initialization
 	void Start ()
     {
-		venenoStage = veneno;
+        txtClick.gameObject.SetActive(false);
+
+        venenoStage = veneno;
 		cantFosforosStage = cantFosforos;
 		timerFosforo = 5;
 		//cantFosforos = 2;
@@ -92,14 +96,28 @@ public class PickUp : MonoBehaviour {
         }
 	}
 
-	void OnGUI(){
-		if (TEST) {
-			Rect RectMensaje = new Rect (520, 470, 100, 100);
+	void OnGUI()
+    {
+		if (TEST)
+        {
+            /*
+            Rect RectMensaje = new Rect (520, 470, 100, 100);
 			GUI.Label (RectMensaje, "Presiona R para pasar al siguiente cuarto", Dibujarmensaje);
+            */
+
+            txtClick.gameObject.SetActive(true);
+            txtClick.text = "Presiona R para pasar al siguiente cuarto";
+            txtClick.CrossFadeAlpha(1, .5f, false);
 		}
-		if (mostrarCarta) {
+		if (mostrarCarta)
+        {
+            /*
 			Rect RectMensaje = new Rect (520, 470, 100, 100);
 			GUI.Label (RectMensaje, "Haz click para leer la carta", Dibujarmensaje);
+            */
+            txtClick.gameObject.SetActive(true);
+            txtClick.text = "Haz click para leer la carta";
+            txtClick.CrossFadeAlpha(1, 0.5f, false);
 		}
 	}
 
@@ -108,26 +126,38 @@ public class PickUp : MonoBehaviour {
 			RaycastHit hit;
 			Ray rayo = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-		if (Physics.Raycast (rayo, out hit, distanceToItem)) {
-			if (hit.collider.gameObject == carta) {
+        //Si esta apuntando
+
+		if (Physics.Raycast (rayo, out hit, distanceToItem))
+        {
+			if (hit.collider.gameObject == carta)
+            {
 				mostrarCarta = true;
-				if (Input.GetMouseButtonUp (0)) {	
-					Debug.Log ("PickUp");
+				if (Input.GetMouseButtonUp (0))
+                {
 					carta.SetActive (false);
 				}
                     
 			} 
 
-			if (hit.collider.gameObject == pasoDeNivel) {
+			if (hit.collider.gameObject == pasoDeNivel)
+            {
 				TEST = true;
-				if (Input.GetKeyUp (KeyCode.R)) {
+				if (Input.GetKeyUp (KeyCode.R))
+                {
 					SceneManager.LoadScene (EscenaSiguiente);
 				}
 			}
-		} else {
-			TEST = false;		
-			mostrarCarta = false;
 		}
+        else
+        {
+            //Si no esta apuntando
+            TEST = false;		
+			mostrarCarta = false;
+
+            //txtClick.gameObject.SetActive(true);
+            txtClick.CrossFadeAlpha(0, 0.5f, false);
+        }
     }
 
 	void CrearFosforo(){
