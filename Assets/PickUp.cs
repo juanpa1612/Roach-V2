@@ -20,29 +20,36 @@ public class PickUp : MonoBehaviour {
 	private int cantFosforosStage;
 	GUIStyle Dibujarmensaje;
 	public string EscenaSiguiente, EscenaActual;
-	public GameObject Match;
+	public GameObject Pointer;
 	private float video;
     private GameObject barraFosforo;
+	public GameObject Hand, Match;
+	private Animator HandAnim, MatchAnim;
 
     public Text txtClick;
 
 	// Use this for initialization
 	void Start ()
     {
+		Hand.SetActive (false);
+		Match.SetActive (false);
+		HandAnim = Hand.GetComponent<Animator> ();
+		MatchAnim = Match.GetComponent<Animator> ();
+
         txtClick.gameObject.SetActive(false);
 
         venenoStage = veneno;
 		cantFosforosStage = cantFosforos;
 		timerFosforo = 5;
 		//cantFosforos = 2;
-		hayLuz = false;
+		//hayLuz = false;
 		lightGameObject = new GameObject ("The Light");
 		Light lightComp = lightGameObject.AddComponent<Light> ();
 		lightComp.color = Color.red;
 		lightComp.color += Color.yellow;
-		lightComp.range = 10;
-		lightComp.intensity = 3;
-		lightComp.bounceIntensity = 1;
+		lightComp.range = 5;
+		lightComp.intensity = 1;
+		lightComp.bounceIntensity = 0.5f;
 		lightGameObject.gameObject.GetComponent<Light> ().enabled = false;
 		fosforo.Stop();
 		Dibujarmensaje = new GUIStyle ();
@@ -78,11 +85,23 @@ public class PickUp : MonoBehaviour {
 			cantFosforos = cantFosforosStage;
 			SceneManager.LoadScene (EscenaActual);
 		}
-		if(hayLuz){	
+		if(hayLuz == false){	
+			//timerFosforo -= Time.deltaTime;
+			fosforo.transform.position = Pointer.transform.position;
+			//fosforo.transform.position.Set (Match.transform.position.x, Match.transform.position.y , Match.transform.position.z);
+			//lightGameObject.transform.position = fosforo.transform.position;
+			lightGameObject.transform.position = Pointer.transform.position;
+		}
+		if(hayLuz == true){	
 			timerFosforo -= Time.deltaTime;
-			fosforo.transform.position = Match.transform.position;
-			fosforo.transform.position.Set (fosforo.transform.position.x, fosforo.transform.position.y , fosforo.transform.position.z);
-			lightGameObject.transform.position = fosforo.transform.position;
+			if (timerFosforo <= 3f) {
+				HandAnim.Play ("H_Idle");
+				MatchAnim.Play ("M_Idle");
+			}
+			fosforo.transform.position = Pointer.transform.position;
+			//fosforo.transform.position.Set (Match.transform.position.x, Match.transform.position.y , Match.transform.position.z);
+			//lightGameObject.transform.position = fosforo.transform.position;
+			lightGameObject.transform.position = Pointer.transform.position;
 		}
         Collect();
 		if (Input.GetKeyDown(KeyCode.F))
@@ -162,8 +181,12 @@ public class PickUp : MonoBehaviour {
 
 	void CrearFosforo(){
 		if(!hayLuz&&cantFosforos>0){
+			Hand.SetActive (true);
+			Match.SetActive (true);
 			lightGameObject.gameObject.GetComponent<Light> ().enabled = true;
 			fosforo.Play ();
+			HandAnim.Play ("H_Light");
+			MatchAnim.Play ("M_Light");
 			hayLuz = true;
 			cantFosforos -= 1;
 		}
@@ -172,6 +195,8 @@ public class PickUp : MonoBehaviour {
 	void DestruirFosforo(){
 		lightGameObject.gameObject.GetComponent<Light> ().enabled = false;
 		fosforo.Stop ();
+		HandAnim.Play ("H_Drop");
+		Match.SetActive (false);
 		hayLuz = false;
 		timerFosforo = 5;
 	}
