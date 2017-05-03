@@ -11,7 +11,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
+        [SerializeField] public float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
@@ -27,7 +27,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-
+		private float tiempoInicio;
+		public bool Escena1;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -41,7 +42,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-
         // Use this for initialization
         private void Start()
         {
@@ -55,12 +55,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+			tiempoInicio = 51;
         }
 
 
         // Update is called once per frame
         private void Update()
         {
+			
+			if (Escena1) {
+				m_WalkSpeed = 0;
+				tiempoInicio -= Time.deltaTime;
+			} else {
+				tiempoInicio = 0;
+			}
+			if (tiempoInicio <= 0) {
+				m_WalkSpeed = 5;
+			}
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using System.Reflection;
 public class PickUp : MonoBehaviour {
 
     public int distanceToItem;
@@ -25,9 +25,9 @@ public class PickUp : MonoBehaviour {
     private GameObject barraFosforo;
 	public GameObject Hand, Match;
 	private Animator HandAnim, MatchAnim;
-
+	public Component movimiento;
+	public FieldInfo fi;
     public Text txtClick;
-
 	// Use this for initialization
 	void Start ()
     {
@@ -40,7 +40,7 @@ public class PickUp : MonoBehaviour {
 
         venenoStage = veneno;
 		cantFosforosStage = cantFosforos;
-		timerFosforo = 5;
+		timerFosforo = 10;
 		//cantFosforos = 2;
 		//hayLuz = false;
 		lightGameObject = new GameObject ("The Light");
@@ -55,9 +55,8 @@ public class PickUp : MonoBehaviour {
 		Dibujarmensaje = new GUIStyle ();
 		Dibujarmensaje.normal.textColor = Color.white;
 		Dibujarmensaje.fontSize = 30;
-		video = 81;
-        barraFosforo = GameObject.Find("BarraLlena");
-		//saludo = false;
+		video = 51;
+        barraFosforo = GameObject.Find("BarraLlena"); 
         
 	}
 

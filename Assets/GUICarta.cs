@@ -63,6 +63,9 @@ public class GUICarta : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+		if (cartita) {
+			BoxCollider box = gameObject.AddComponent<BoxCollider>();
+		}
 		//print (TimePrendido);
 		//print (GUI.color);
 		if (TimePrendido <= 0)

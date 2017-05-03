@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour {
 	private static bool relacion = false;
 	// Use this for initialization
 	void Start () {
-		intro = 81;
+		intro = 51;
 		Source = GetComponent<AudioSource>();
 		saludo = false;
 		leyo = CartaMana.GetComponent<GUICarta> ().getCartita();
