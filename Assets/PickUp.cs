@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour {
 
@@ -19,26 +20,36 @@ public class PickUp : MonoBehaviour {
 	private int cantFosforosStage;
 	GUIStyle Dibujarmensaje;
 	public string EscenaSiguiente, EscenaActual;
-	public GameObject Match;
+	public GameObject Pointer;
 	private float video;
     private GameObject barraFosforo;
+	public GameObject Hand, Match;
+	private Animator HandAnim, MatchAnim;
 
+    public Text txtClick;
 
 	// Use this for initialization
 	void Start ()
     {
-		venenoStage = veneno;
+		Hand.SetActive (false);
+		Match.SetActive (false);
+		HandAnim = Hand.GetComponent<Animator> ();
+		MatchAnim = Match.GetComponent<Animator> ();
+
+        txtClick.gameObject.SetActive(false);
+
+        venenoStage = veneno;
 		cantFosforosStage = cantFosforos;
 		timerFosforo = 5;
 		//cantFosforos = 2;
-		hayLuz = false;
+		//hayLuz = false;
 		lightGameObject = new GameObject ("The Light");
 		Light lightComp = lightGameObject.AddComponent<Light> ();
 		lightComp.color = Color.red;
 		lightComp.color += Color.yellow;
-		lightComp.range = 10;
-		lightComp.intensity = 3;
-		lightComp.bounceIntensity = 1;
+		lightComp.range = 5;
+		lightComp.intensity = 1;
+		lightComp.bounceIntensity = 0.5f;
 		lightGameObject.gameObject.GetComponent<Light> ().enabled = false;
 		fosforo.Stop();
 		Dibujarmensaje = new GUIStyle ();
@@ -74,11 +85,23 @@ public class PickUp : MonoBehaviour {
 			cantFosforos = cantFosforosStage;
 			SceneManager.LoadScene (EscenaActual);
 		}
-		if(hayLuz){	
+		if(hayLuz == false){	
+			//timerFosforo -= Time.deltaTime;
+			fosforo.transform.position = Pointer.transform.position;
+			//fosforo.transform.position.Set (Match.transform.position.x, Match.transform.position.y , Match.transform.position.z);
+			//lightGameObject.transform.position = fosforo.transform.position;
+			lightGameObject.transform.position = Pointer.transform.position;
+		}
+		if(hayLuz == true){	
 			timerFosforo -= Time.deltaTime;
-			fosforo.transform.position = Match.transform.position;
-			fosforo.transform.position.Set (fosforo.transform.position.x, fosforo.transform.position.y , fosforo.transform.position.z);
-			lightGameObject.transform.position = fosforo.transform.position;
+			if (timerFosforo <= 3f) {
+				HandAnim.Play ("H_Idle");
+				MatchAnim.Play ("M_Idle");
+			}
+			fosforo.transform.position = Pointer.transform.position;
+			//fosforo.transform.position.Set (Match.transform.position.x, Match.transform.position.y , Match.transform.position.z);
+			//lightGameObject.transform.position = fosforo.transform.position;
+			lightGameObject.transform.position = Pointer.transform.position;
 		}
         Collect();
 		if (Input.GetKeyDown(KeyCode.F))
@@ -92,14 +115,28 @@ public class PickUp : MonoBehaviour {
         }
 	}
 
-	void OnGUI(){
-		if (TEST) {
-			Rect RectMensaje = new Rect (520, 470, 100, 100);
+	void OnGUI()
+    {
+		if (TEST)
+        {
+            /*
+            Rect RectMensaje = new Rect (520, 470, 100, 100);
 			GUI.Label (RectMensaje, "Presiona R para pasar al siguiente cuarto", Dibujarmensaje);
+            */
+
+            txtClick.gameObject.SetActive(true);
+            txtClick.text = "Presiona R para pasar al siguiente cuarto";
+            txtClick.CrossFadeAlpha(1, .5f, false);
 		}
-		if (mostrarCarta) {
+		if (mostrarCarta)
+        {
+            /*
 			Rect RectMensaje = new Rect (520, 470, 100, 100);
 			GUI.Label (RectMensaje, "Haz click para leer la carta", Dibujarmensaje);
+            */
+            txtClick.gameObject.SetActive(true);
+            txtClick.text = "Haz click para leer la carta";
+            txtClick.CrossFadeAlpha(1, 0.5f, false);
 		}
 	}
 
@@ -108,32 +145,48 @@ public class PickUp : MonoBehaviour {
 			RaycastHit hit;
 			Ray rayo = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-		if (Physics.Raycast (rayo, out hit, distanceToItem)) {
-			if (hit.collider.gameObject == carta) {
+        //Si esta apuntando
+
+		if (Physics.Raycast (rayo, out hit, distanceToItem))
+        {
+			if (hit.collider.gameObject == carta)
+            {
 				mostrarCarta = true;
-				if (Input.GetMouseButtonUp (0)) {	
-					Debug.Log ("PickUp");
+				if (Input.GetMouseButtonUp (0))
+                {
 					carta.SetActive (false);
 				}
                     
 			} 
 
-			if (hit.collider.gameObject == pasoDeNivel) {
+			if (hit.collider.gameObject == pasoDeNivel)
+            {
 				TEST = true;
-				if (Input.GetKeyUp (KeyCode.R)) {
+				if (Input.GetKeyUp (KeyCode.R))
+                {
 					SceneManager.LoadScene (EscenaSiguiente);
 				}
 			}
-		} else {
-			TEST = false;		
-			mostrarCarta = false;
 		}
+        else
+        {
+            //Si no esta apuntando
+            TEST = false;		
+			mostrarCarta = false;
+
+            //txtClick.gameObject.SetActive(true);
+            txtClick.CrossFadeAlpha(0, 0.5f, false);
+        }
     }
 
 	void CrearFosforo(){
 		if(!hayLuz&&cantFosforos>0){
+			Hand.SetActive (true);
+			Match.SetActive (true);
 			lightGameObject.gameObject.GetComponent<Light> ().enabled = true;
 			fosforo.Play ();
+			HandAnim.Play ("H_Light");
+			MatchAnim.Play ("M_Light");
 			hayLuz = true;
 			cantFosforos -= 1;
 		}
@@ -142,6 +195,8 @@ public class PickUp : MonoBehaviour {
 	void DestruirFosforo(){
 		lightGameObject.gameObject.GetComponent<Light> ().enabled = false;
 		fosforo.Stop ();
+		HandAnim.Play ("H_Drop");
+		Match.SetActive (false);
 		hayLuz = false;
 		timerFosforo = 5;
 	}
