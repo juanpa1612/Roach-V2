@@ -103,7 +103,7 @@ public class PickUp : MonoBehaviour {
 			lightGameObject.transform.position = Pointer.transform.position;
 		}
         Collect();
-		if (Input.GetKeyDown(KeyCode.F)||(Input.GetButtonUp("Xbox_A")))
+		if ((Input.GetKeyDown(KeyCode.F)||(Input.GetButtonUp("Xbox_A")))&&video<=0)
         {
 			CrearFosforo ();
             barraFosforo.GetComponent<Animator>().SetBool("Fuego", true);
