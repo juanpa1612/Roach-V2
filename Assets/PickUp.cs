@@ -103,7 +103,7 @@ public class PickUp : MonoBehaviour {
 			lightGameObject.transform.position = Pointer.transform.position;
 		}
         Collect();
-		if (Input.GetKeyDown(KeyCode.F))
+		if (Input.GetKeyDown(KeyCode.F)||(Input.GetButtonUp("Xbox_A")))
         {
 			CrearFosforo ();
             barraFosforo.GetComponent<Animator>().SetBool("Fuego", true);
@@ -124,7 +124,7 @@ public class PickUp : MonoBehaviour {
             */
 
             txtClick.gameObject.SetActive(true);
-            txtClick.text = "Presiona R para pasar al siguiente cuarto";
+            txtClick.text = "Presiona Y para pasar al siguiente cuarto";
             txtClick.CrossFadeAlpha(1, .5f, false);
 		}
 		if (mostrarCarta)
@@ -134,7 +134,7 @@ public class PickUp : MonoBehaviour {
 			GUI.Label (RectMensaje, "Haz click para leer la carta", Dibujarmensaje);
             */
             txtClick.gameObject.SetActive(true);
-            txtClick.text = "Haz click para leer la carta";
+            txtClick.text = "Presiona X para leer la carta";
             txtClick.CrossFadeAlpha(1, 0.5f, false);
 		}
 	}
@@ -151,7 +151,7 @@ public class PickUp : MonoBehaviour {
 			if (hit.collider.gameObject == carta)
             {
 				mostrarCarta = true;
-				if (Input.GetMouseButtonUp (0))
+				if (Input.GetMouseButtonUp (0)||(Input.GetButtonUp("Xbox_X")))
                 {
 					carta.SetActive (false);
 				}
@@ -161,9 +161,14 @@ public class PickUp : MonoBehaviour {
 			if (hit.collider.gameObject == pasoDeNivel)
             {
 				TEST = true;
-				if (Input.GetKeyUp (KeyCode.R))
+				if (Input.GetKeyUp (KeyCode.R)||(Input.GetButtonUp("Xbox_Y")))
                 {
+					if (EscenaActual == "Nivel2") {
+						veneno = 900;
+						cantFosforos = 30;
+					}
 					SceneManager.LoadScene (EscenaSiguiente);
+
 				}
 			}
 		}
@@ -197,7 +202,7 @@ public class PickUp : MonoBehaviour {
 		HandAnim.Play ("H_Drop");
 		Match.SetActive (false);
 		hayLuz = false;
-		timerFosforo = 5;
+		timerFosforo = 10;
 	}
 
 	public void sumarFosforos(int numSumar){

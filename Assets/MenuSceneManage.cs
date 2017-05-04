@@ -13,11 +13,11 @@ public class MenuSceneManage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKey (KeyCode.A)) {
-				SceneManager.LoadScene ("Nivel1_Chumi");
+		if (Input.GetKey (KeyCode.A)||(Input.GetButtonUp("Xbox_Start"))) {
+				SceneManager.LoadScene ("LoadLevel1");
 			}
 	
-		if (Input.GetKey (KeyCode.B)) {
+		if (Input.GetKey (KeyCode.B)||(Input.GetButtonUp("Xbox_Back"))) {
 			SceneManager.LoadScene ("Creditos");
 		}
 	}

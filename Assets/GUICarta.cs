@@ -20,7 +20,7 @@ public class GUICarta : MonoBehaviour {
     public Text masMensajes;
     public Image imgCarta;
     private Color colorCarta;
-
+	public Font fuente;
 	// Use this for initialization
 	void Start ()
     {
@@ -96,7 +96,7 @@ public class GUICarta : MonoBehaviour {
             }
 		}
 
-		if (Input.GetKeyUp (KeyCode.E))
+		if ((Input.GetKeyUp (KeyCode.E)||(Input.GetButtonDown("Xbox_B")))&&cartita)
         {
 			cartita = false;
 			sono = false;
