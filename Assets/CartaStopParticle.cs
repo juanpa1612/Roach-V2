@@ -5,7 +5,7 @@ using UnityEngine;
 public class CartaStopParticle : MonoBehaviour {
 
 	public ParticleSystem Brillo;
-	public GameObject Carta;
+	public GameObject Objeto;
 	// Use this for initialization
 	void Start () {
 	}
@@ -13,7 +13,7 @@ public class CartaStopParticle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Carta.activeInHierarchy == false){
+		if (Objeto.activeInHierarchy == false){
 			Brillo.Stop();
 			Brillo.GetComponent<Light> ().enabled = false;
 		}
