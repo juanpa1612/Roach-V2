@@ -28,6 +28,8 @@ public class PickUp : MonoBehaviour {
 	public Component movimiento;
 	public FieldInfo fi;
     public Text txtClick;
+	public GameObject Cadaver;
+	private bool cadaver;
 	// Use this for initialization
 	void Start ()
     {
@@ -57,6 +59,7 @@ public class PickUp : MonoBehaviour {
 		Dibujarmensaje.fontSize = 30;
 		video = 51;
         barraFosforo = GameObject.Find("BarraLlena"); 
+		cadaver = false;
         
 	}
 
@@ -65,6 +68,10 @@ public class PickUp : MonoBehaviour {
 	}
 	public float getVeneno(){
 		return veneno;
+	}
+
+	public bool getCadaver(){
+		return cadaver;
 	}
 
 	// Update is called once per frame
@@ -171,13 +178,20 @@ public class PickUp : MonoBehaviour {
 
 				}
 			}
+
+			if (hit.collider.gameObject == Cadaver)
+			{
+				cadaver = true;
+			}
+
+
 		}
         else
         {
             //Si no esta apuntando
             TEST = false;		
 			mostrarCarta = false;
-
+			cadaver = false;
             //txtClick.gameObject.SetActive(true);
             txtClick.CrossFadeAlpha(0, 0.5f, false);
         }

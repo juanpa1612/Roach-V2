@@ -15,7 +15,7 @@ public class Creditos : MonoBehaviour {
 	void Update () {
 		y = y -1;
 		Debug.Log (y);
-		if (y <= (-250)) {
+		if (y <= (-460)) {
 			SceneManager.LoadScene("Menu");
 		}
 	}
@@ -31,7 +31,19 @@ public class Creditos : MonoBehaviour {
 		GUI.Label(new Rect((Screen.width/2)-80,y+140,200,50),"Level Design, Modelado Niveles, HUD", nuevo);
 		GUI.Label(new Rect((Screen.width/2)-80,y+160,200,50),"", nuevo);
 		GUI.Label(new Rect((Screen.width/2)-80,y+180,200,50),"", nuevo);
-		GUI.Label(new Rect((Screen.width/2)-80,y+200,200,50),"Copyright 2017 6 Weeks Games", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+200,200,50),"Daniel Vega:", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+220,200,50),"Sonidos, Pantalla de Carga", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+240,200,50),"", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+260,200,50),"", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+280,200,50),"Especial Agradecimiento David Pineda:", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+300,200,50),"Ayuda Implementacion Controles", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+320,200,50),"", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+340,200,50),"", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+360,200,50),"Especial Agradecimiento Andres Castro:", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+380,200,50),"Ayuda en Programacion", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+400,200,50),"", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+420,200,50),"", nuevo);
+		GUI.Label(new Rect((Screen.width/2)-80,y+440,200,50),"Copyright 2017 6 Weeks Games", nuevo);
 
 	}
 }

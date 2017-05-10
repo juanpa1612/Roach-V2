@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GUICarta : MonoBehaviour {
 	private GUIStyle Dibujarmensaje;
@@ -15,7 +16,6 @@ public class GUICarta : MonoBehaviour {
 	private AudioSource Source;
 	public AudioClip papel;
 	private bool sono;
-
     //Optimizacion Chumi
     public Text masMensajes;
     public Image imgCarta;
@@ -65,6 +65,7 @@ public class GUICarta : MonoBehaviour {
     {
 		if (cartita) {
 			BoxCollider box = gameObject.AddComponent<BoxCollider>();
+			Jugador.GetComponent<FirstPersonController> ().m_WalkSpeed = 0;
 		}
 		//print (TimePrendido);
 		//print (GUI.color);

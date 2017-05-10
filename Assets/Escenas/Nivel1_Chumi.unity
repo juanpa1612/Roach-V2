@@ -4404,6 +4404,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &365113522 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1077829449474636, guid: 4ed5132b6203710499fd7071c2ac8be3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1861118605}
 --- !u!1001 &375614672
 Prefab:
   m_ObjectHideFlags: 0
@@ -8901,7 +8906,7 @@ ParticleSystem:
   m_GameObject: {fileID: 663563633}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.1
+  simulationSpeed: 0.1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -11736,7 +11741,7 @@ ParticleSystem:
   m_GameObject: {fileID: 678146250}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.1
+  simulationSpeed: 0.1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -17955,6 +17960,21 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114010484946789940, guid: 2b995141f35b821488903f0407b757e7,
+        type: 2}
+      propertyPath: Saludo
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e8de11ec9e7d424b8654a5fc503ba43, type: 3}
+    - target: {fileID: 114010484946789940, guid: 2b995141f35b821488903f0407b757e7,
+        type: 2}
+      propertyPath: Inicio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dba1682bb065d14c977c8ddb7b2537a, type: 3}
+    - target: {fileID: 114010484946789940, guid: 2b995141f35b821488903f0407b757e7,
+        type: 2}
+      propertyPath: Cadaver
+      value: 
+      objectReference: {fileID: 8300000, guid: 370720051f2dbde4baf1d893ec38c124, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b995141f35b821488903f0407b757e7, type: 2}
   m_IsPrefabParent: 0
@@ -27068,6 +27088,7 @@ MonoBehaviour:
   Match: {fileID: 245331544}
   movimiento: {fileID: 0}
   txtClick: {fileID: 1400177143}
+  Cadaver: {fileID: 365113522}
 --- !u!1001 &1914576838
 Prefab:
   m_ObjectHideFlags: 0
@@ -29026,7 +29047,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2058550849}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.05
+  simulationSpeed: 0.05
   looping: 1
   prewarm: 0
   playOnAwake: 1

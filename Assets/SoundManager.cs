@@ -9,8 +9,10 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip Agota;
 	public AudioClip DebePuerta;
 	public AudioClip Acaban;
+	public AudioClip Inicio;
+	public AudioClip Cadaver;
 	private bool saludo;
-	private bool leyo, carta, regalo, agota, debePuerta, acaban;
+	private bool leyo, carta, regalo, agota, debePuerta, acaban, inicio, cadaver;
 	private AudioSource Source;
 	public GameObject CartaMana;
 	private float intro;
@@ -21,6 +23,7 @@ public class SoundManager : MonoBehaviour {
 	private static int conteo=0;
 	public AudioClip Relacion;
 	private static bool relacion = false;
+	private bool cadaverPlayer;
 	// Use this for initialization
 	void Start () {
 		intro = 51;
@@ -36,15 +39,30 @@ public class SoundManager : MonoBehaviour {
 		debePuerta = false;
 		tiempoensala = 300;
 		acaban = false;
+		cadaver = false;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		cadaverPlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<PickUp> ().getCadaver ();
 		intro -= Time.deltaTime;
 		tiempoensala -= Time.deltaTime;
 		leyo = CartaMana.GetComponent<GUICarta> ().getCartita();
 		veneno = GameObject.FindGameObjectWithTag ("Player").GetComponent<PickUp> ().getVeneno();
 		fosforos= GameObject.FindGameObjectWithTag ("Player").GetComponent<PickUp> ().getFosforos();
+		/*
+		if (!inicio&&sala=="Nivel1_Chumi") {
+			Source.clip = Inicio;
+			Source.Play ();
+			inicio = true;
+		}
+		*/
+		if (cadaverPlayer && !cadaver) {
+			Source.clip = Cadaver;
+			Source.Play ();
+			cadaver = true;
+		}
 		if (!saludo&&intro<=0&&sala=="Nivel1_Chumi") {
 			Source.clip = Saludo;
 			Source.Play ();

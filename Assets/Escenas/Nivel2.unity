@@ -1676,7 +1676,7 @@ ParticleSystem:
   m_GameObject: {fileID: 252350018}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.1
+  simulationSpeed: 0.1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -9033,7 +9033,7 @@ ParticleSystem:
   m_GameObject: {fileID: 672817763}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.1
+  simulationSpeed: 0.1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -12122,6 +12122,16 @@ Prefab:
       propertyPath: Relacion
       value: 
       objectReference: {fileID: 8300000, guid: e16679ddd6ac19e4d9e06818c67f72e7, type: 3}
+    - target: {fileID: 114010484946789940, guid: 2b995141f35b821488903f0407b757e7,
+        type: 2}
+      propertyPath: Cadaver
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cbd4fc0ef3d97c41b392a56db54524f, type: 3}
+    - target: {fileID: 114010484946789940, guid: 2b995141f35b821488903f0407b757e7,
+        type: 2}
+      propertyPath: Inicio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dba1682bb065d14c977c8ddb7b2537a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b995141f35b821488903f0407b757e7, type: 2}
   m_IsPrefabParent: 0
@@ -13421,7 +13431,7 @@ ParticleSystem:
   m_GameObject: {fileID: 775405650}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.05
+  simulationSpeed: 0.05
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -17464,7 +17474,7 @@ ParticleSystem:
   m_GameObject: {fileID: 899897421}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.05
+  simulationSpeed: 0.05
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -23375,7 +23385,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1190895107}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.05
+  simulationSpeed: 0.05
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -26140,7 +26150,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh32410
+  m_Name: pb_Mesh38194
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -26348,7 +26358,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7369338
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26406,6 +26416,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.4280002
       objectReference: {fileID: 0}
+    - target: {fileID: 100122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
   m_IsPrefabParent: 0
@@ -26460,7 +26475,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh57768
+  m_Name: pb_Mesh38470
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -28924,7 +28939,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-114420
+  m_Name: pb_Mesh38564
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -30550,6 +30565,26 @@ Prefab:
       propertyPath: m_Name
       value: FPSController (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_UseHeadBob
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: Carta
+      value: 
+      objectReference: {fileID: 1817957220}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_SkinWidth
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -30586,6 +30621,7 @@ MonoBehaviour:
   Match: {fileID: 185830967}
   movimiento: {fileID: 0}
   txtClick: {fileID: 642731750}
+  Cadaver: {fileID: 2104155490}
 --- !u!1 &1911594397
 GameObject:
   m_ObjectHideFlags: 0
@@ -30709,7 +30745,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1911594397}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.05
+  simulationSpeed: 0.05
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -35402,6 +35438,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ed5132b6203710499fd7071c2ac8be3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2104155490 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1077829449474636, guid: 4ed5132b6203710499fd7071c2ac8be3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2104155489}
 --- !u!1 &2109986193
 GameObject:
   m_ObjectHideFlags: 0

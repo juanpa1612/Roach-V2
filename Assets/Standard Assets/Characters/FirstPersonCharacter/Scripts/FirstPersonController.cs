@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -56,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 			tiempoInicio = 51;
+
         }
 
 
