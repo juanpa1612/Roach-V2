@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-		private float tiempoInicio;
+		public float tiempoInicio;
 		public bool Escena1;
         private Camera m_Camera;
         private bool m_Jump;
@@ -63,13 +63,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
 			
-			if (Escena1) {
+			if (Escena1)
+            {
 				m_WalkSpeed = 0;
 				tiempoInicio -= Time.deltaTime;
-			} else {
+			}
+            else
+            {
 				tiempoInicio = 0;
 			}
-			if (tiempoInicio <= 0) {
+			if (tiempoInicio <= 0)
+            {
 				m_WalkSpeed = 5;
 			}
             RotateView();
