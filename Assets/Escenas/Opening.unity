@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639289d6e5779cd4f9eff1ac81ba4d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movText: {fileID: 15200000, guid: 0eed1fb1b6d69bd44a60385d5c13708f, type: 3}
+  movText: {fileID: 15200000, guid: 5021a232011a3c445a732d7c993bd0d7, type: 3}
 --- !u!82 &489069002
 AudioSource:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0eed1fb1b6d69bd44a60385d5c13708f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5021a232011a3c445a732d7c993bd0d7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -644,7 +644,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 73bf60b941d534748bb82f56fe4c7d70, type: 2}
+  - {fileID: 2100000, guid: 91fec72644939834f8ade1515472f7f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -690,7 +690,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489069000}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 7.56, y: 2.37, z: -2.02}
+  m_LocalPosition: {x: 7.64, y: 2.45, z: -1.1}
   m_LocalScale: {x: 1.678389, y: 1.149752, z: 0.9728196}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1248,7 +1248,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2112498537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.6, y: 2.16, z: -4}
+  m_LocalPosition: {x: 7.6, y: 2.16, z: -2.11}
   m_LocalScale: {x: 0.9728207, y: 0.97281957, z: 0.97281957}
   m_Children: []
   m_Father: {fileID: 0}
