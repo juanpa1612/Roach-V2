@@ -62,19 +62,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-			
-			if (Escena1)
-            {
+			if (Escena1&&tiempoInicio>0) {
 				m_WalkSpeed = 0;
 				tiempoInicio -= Time.deltaTime;
-			}
-            else
-            {
-				tiempoInicio = 0;
-			}
-			if (tiempoInicio <= 0)
-            {
-				m_WalkSpeed = 5;
 			}
             RotateView();
             // the jump state needs to read here to make sure it is not missed

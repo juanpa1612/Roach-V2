@@ -35,7 +35,7 @@ public class PickUp : MonoBehaviour {
 
     private bool cadaver;
     public GameObject gmCadaver;
-
+	private bool SumarFosforos;
 	// Use this for initialization
 	void Start ()
     {
@@ -70,6 +70,7 @@ public class PickUp : MonoBehaviour {
 		Dibujarmensaje.fontSize = 30;
 		video = 51;
         barraFosforo = GameObject.Find("BarraLlena"); 
+		SumarFosforos = false;
         
 	}
 
@@ -172,6 +173,18 @@ public class PickUp : MonoBehaviour {
 
 
 		}
+		if (SumarFosforos)
+		{
+			/*
+			Rect RectMensaje = new Rect (520, 470, 100, 100);
+			GUI.Label (RectMensaje, "Haz click para leer la carta", Dibujarmensaje);
+            */
+			txtClick.gameObject.SetActive(true);
+			txtClick.text = "Presiona X para recoger fosforos";
+			txtClick.CrossFadeAlpha(1, 0.5f, false);
+
+
+		}
 	}
 
     void Collect ()
@@ -213,6 +226,15 @@ public class PickUp : MonoBehaviour {
             {
                 cadaver = true;
             }
+			if (hit.collider.gameObject.tag == "CajasFosforos")
+			{
+				SumarFosforos = true;
+				if(Input.GetMouseButtonUp (0)||(Input.GetButtonUp("Xbox_X"))){
+					
+					sumarFosforos(3);
+					hit.collider.gameObject.SetActive (false);
+				}
+			}
         }
         else
         {
@@ -220,6 +242,7 @@ public class PickUp : MonoBehaviour {
             TEST = false;		
 			mostrarCarta = false;
             cadaver = false;
+			SumarFosforos = false;
             //txtClick.gameObject.SetActive(true);
             txtClick.CrossFadeAlpha(0, 0.5f, false);
         }

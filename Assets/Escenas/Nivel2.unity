@@ -97,7 +97,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh155898
+  m_Name: pb_Mesh84972
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 78469084}
   m_Layer: 0
   m_Name: CajaFosforos 4
-  m_TagString: Untagged
+  m_TagString: CajasFosforos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16320,7 +16320,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh127438
+  m_Name: pb_Mesh84790
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -26563,7 +26563,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7369338
+      value: 0.7369348
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26575,7 +26575,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.012992208
+      value: -0.012992203
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalRotation.y
@@ -26583,7 +26583,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.03895361
+      value: -0.038953613
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26591,7 +26591,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: 502a70dddaf599941a66c94025f0dc5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -26812,7 +26812,7 @@ GameObject:
   - component: {fileID: 1322332819}
   m_Layer: 0
   m_Name: CajaFosforos 3
-  m_TagString: Untagged
+  m_TagString: CajasFosforos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27953,7 +27953,7 @@ GameObject:
   - component: {fileID: 1541321414}
   m_Layer: 0
   m_Name: CajaFosforos 2
-  m_TagString: Untagged
+  m_TagString: CajasFosforos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29076,12 +29076,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1665270415}
   m_LocalRotation: {x: -0.11738036, y: 0.69729614, z: 0.11738036, w: 0.69729614}
-  m_LocalPosition: {x: 4.183, y: -6.543, z: 0.985}
+  m_LocalPosition: {x: 4.182999, y: -6.543, z: 0.98500013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 185830968}
   m_Father: {fileID: 1905385052}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -19.111, y: 90.00001, z: 0}
 --- !u!43 &1683235563
 Mesh:
@@ -29216,7 +29216,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-114420
+  m_Name: pb_Mesh85038
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -29791,7 +29791,7 @@ GameObject:
   - component: {fileID: 1765130845}
   m_Layer: 0
   m_Name: CajaFosforos 1
-  m_TagString: Untagged
+  m_TagString: CajasFosforos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30846,6 +30846,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Height
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
