@@ -68,7 +68,6 @@ public class GUICarta : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
 		if (cartita||(Jugador.GetComponent<FirstPersonController>().Escena1&&Jugador.GetComponent<FirstPersonController>().tiempoInicio>0))
         {
 			Jugador.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
@@ -78,7 +77,6 @@ public class GUICarta : MonoBehaviour {
         {
 			Jugador.GetComponent<FirstPersonController>().m_WalkSpeed = 5;
         }
-        
 		//print (TimePrendido);
 		//print (GUI.color);
 		if (TimePrendido <= 0)

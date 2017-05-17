@@ -62,7 +62,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-			if (Escena1&&tiempoInicio>0) {
+			
+			if (Escena1)
+            {
 				m_WalkSpeed = 0;
 				tiempoInicio -= Time.deltaTime;
 			}

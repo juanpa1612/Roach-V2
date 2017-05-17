@@ -35,7 +35,7 @@ public class PickUp : MonoBehaviour {
 
     private bool cadaver;
     public GameObject gmCadaver;
-	private bool SumarFosforos;
+	private bool CajaFosforos;
 	// Use this for initialization
 	void Start ()
     {
@@ -70,8 +70,7 @@ public class PickUp : MonoBehaviour {
 		Dibujarmensaje.fontSize = 30;
 		video = 51;
         barraFosforo = GameObject.Find("BarraLlena"); 
-		SumarFosforos = false;
-        
+		CajaFosforos = false;
 	}
 
 	public int getFosforos(){
@@ -173,7 +172,8 @@ public class PickUp : MonoBehaviour {
 
 
 		}
-		if (SumarFosforos)
+
+		if (CajaFosforos)
 		{
 			/*
 			Rect RectMensaje = new Rect (520, 470, 100, 100);
@@ -226,15 +226,19 @@ public class PickUp : MonoBehaviour {
             {
                 cadaver = true;
             }
-			if (hit.collider.gameObject.tag == "CajasFosforos")
+
+			if (hit.collider.gameObject.tag==("CajaFosforos"))
 			{
-				SumarFosforos = true;
-				if(Input.GetMouseButtonUp (0)||(Input.GetButtonUp("Xbox_X"))){
-					
-					sumarFosforos(3);
+				CajaFosforos = true;
+				if (Input.GetMouseButtonUp (0)||(Input.GetButtonUp("Xbox_X")))
+				{
 					hit.collider.gameObject.SetActive (false);
+					sumarFosforos (3);
+					//txtTutorial.text = "Presiona B para dejar de leer la carta";
+					//txtTutorial.CrossFadeAlpha(1, .5f, false);
 				}
-			}
+
+			} 
         }
         else
         {
@@ -242,7 +246,7 @@ public class PickUp : MonoBehaviour {
             TEST = false;		
 			mostrarCarta = false;
             cadaver = false;
-			SumarFosforos = false;
+			CajaFosforos = false;
             //txtClick.gameObject.SetActive(true);
             txtClick.CrossFadeAlpha(0, 0.5f, false);
         }
