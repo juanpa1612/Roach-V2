@@ -6,7 +6,7 @@ using UnityStandardAssets.ImageEffects;
 public class EfectoBlur : MonoBehaviour
 {
 
-    float video = 60;
+    float video = 70;
     MotionBlur mBlur;
 
     private void Start()
@@ -18,11 +18,11 @@ public class EfectoBlur : MonoBehaviour
     {
         if ( video > 0)
         {
-            if (video <= 10 && video > 2)
+            if (video <= 20 && video > 5)
             {
                 mBlur.enabled = true;
             }
-            if (video <= 2)
+            if (video <= 5)
             {
                 mBlur.enabled = false;
             }

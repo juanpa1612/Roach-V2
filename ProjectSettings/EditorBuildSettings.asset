@@ -5,35 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Menu.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Nivel1_Chumi.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Nivel2.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Nivel3.unity
   - enabled: 0
     path: Assets/Escenas/Nivel4.unity
   - enabled: 0
     path: Assets/Escenas/Nivel5.unity
   - enabled: 0
-    path: Assets/Escenas/LoadLevel1.unity
-  - enabled: 0
     path: Assets/Escenas/Ending.unity
-  - enabled: 0
-    path: Assets/Escenas/LoadLevel2.unity
-  - enabled: 0
-    path: Assets/Escenas/LoadLevel3.unity
-  - enabled: 0
-    path: Assets/Escenas/LoadLevel4.unity
-  - enabled: 0
-    path: Assets/Escenas/LoadLevel5.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Creditos.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Opening.unity
   - enabled: 1
     path: Assets/Escenas/Load1.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Escenas/Load2.unity
+  - enabled: 1
+    path: Assets/Escenas/Load3.unity

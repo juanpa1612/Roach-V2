@@ -97,7 +97,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh37790
+  m_Name: pb_Mesh155898
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1677,7 +1677,7 @@ ParticleSystem:
   m_GameObject: {fileID: 252350018}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.15
+  simulationSpeed: 0.15
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -5071,7 +5071,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-118484
+  m_Name: pb_Mesh155546
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -9108,7 +9108,7 @@ ParticleSystem:
   m_GameObject: {fileID: 672817763}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -13501,7 +13501,7 @@ ParticleSystem:
   m_GameObject: {fileID: 775405650}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.15
+  simulationSpeed: 0.15
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -16305,7 +16305,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1004264471130880, guid: 44a5b37ba7d02ee498dc6960b221e5ba, type: 2}
       propertyPath: m_Name
-      value: Fosforo (1)
+      value: Fosforo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a5b37ba7d02ee498dc6960b221e5ba, type: 2}
@@ -17544,7 +17544,7 @@ ParticleSystem:
   m_GameObject: {fileID: 899897421}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.15
+  simulationSpeed: 0.15
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -23536,7 +23536,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1190895107}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.15
+  simulationSpeed: 0.15
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -26675,7 +26675,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh26342
+  m_Name: pb_Mesh155856
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -28420,7 +28420,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh29034
+  m_Name: pb_Mesh155394
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -29088,7 +29088,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-135712
+  m_Name: pb_Mesh155210
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -30884,7 +30884,7 @@ MonoBehaviour:
   Match: {fileID: 185830967}
   movimiento: {fileID: 0}
   txtClick: {fileID: 642731750}
-  txtTutorial: {fileID: 0}
+  txtTutorial: {fileID: 1986167820}
   gmCadaver: {fileID: 2104155490}
 --- !u!1 &1911594397
 GameObject:
@@ -31009,7 +31009,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1911594397}
   serializedVersion: 5
   lengthInSec: 2
-  speed: 0.15
+  simulationSpeed: 0.15
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -34006,7 +34006,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 41b9517f32899e44d9beb1a09e9d33ff, type: 2}
+  - {fileID: 2100000, guid: 3e00c1aa2d4aa104bb3c3723fbb42716, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

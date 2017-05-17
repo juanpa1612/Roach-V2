@@ -31,7 +31,7 @@ public class MenuSceneManage : MonoBehaviour {
             	
 			if (sceneName == "Opening")
             {
-				SceneManager.LoadScene ("LoadLevel1");
+				SceneManager.LoadScene ("Load3");
 			}
 			if (sceneName == "Menu")
             {
