@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.09, g: 0.09, b: 0.09, a: 1}
+  m_AmbientSkyColor: {r: 0.03, g: 0.03, b: 0.03, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -3461,7 +3461,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh18198
+  m_Name: pb_Mesh16572
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -4137,7 +4137,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13286
+  m_Name: pb_Mesh16376
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -9166,7 +9166,7 @@ ParticleSystem:
   m_GameObject: {fileID: 663563633}
   serializedVersion: 5
   lengthInSec: 2
-  simulationSpeed: 0.15
+  speed: 0.08
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -12001,7 +12001,7 @@ ParticleSystem:
   m_GameObject: {fileID: 678146250}
   serializedVersion: 5
   lengthInSec: 2
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -29504,7 +29504,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2058550849}
   serializedVersion: 5
   lengthInSec: 2
-  simulationSpeed: 0.15
+  speed: 0.05
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -29595,7 +29595,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 0.8
+      scalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:

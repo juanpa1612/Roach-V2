@@ -11,7 +11,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
-        [SerializeField] public float m_WalkSpeed;
+		[SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+		public bool cartita;
+		private bool intro;
         // Use this for initialization
         private void Start()
         {
@@ -56,6 +58,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 			tiempoInicio = 51;
+			cartita = false;
+			if (Escena1) {
+				intro = true;
+			} else {
+				intro = false;
+			}
         }
 
 
@@ -63,10 +71,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
 			
-			if (Escena1)
-            {
+			if (intro || cartita) {
 				m_WalkSpeed = 0;
 				tiempoInicio -= Time.deltaTime;
+			} else {
+				m_WalkSpeed = 5;
+			}
+
+			if (tiempoInicio < 0) {
+				intro = false;
 			}
             RotateView();
             // the jump state needs to read here to make sure it is not missed

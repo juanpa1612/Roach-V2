@@ -9,7 +9,7 @@ public class LoadingScene2 : MonoBehaviour {
 	public Text Uno, Dos;
 	private Color Color1, Color2;
 	private string a;
-	public Object scene;
+	public string scene;
 	//Always start this coroutine in the start function
 	private void Start()
 	{
@@ -29,7 +29,7 @@ public class LoadingScene2 : MonoBehaviour {
 			Dos.color = Color2;
 		}
 		if (timer >= 10) {
-			SceneManager.LoadScene (scene.name);
+			SceneManager.LoadScene (scene);
 		}
 	
 	}

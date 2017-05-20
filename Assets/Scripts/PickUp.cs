@@ -60,8 +60,8 @@ public class PickUp : MonoBehaviour {
 		Light lightComp = lightGameObject.AddComponent<Light> ();
 		lightComp.color = Color.red;
 		lightComp.color += Color.yellow;
-		lightComp.range = 5;
-		lightComp.intensity = 1;
+		lightComp.range = 5f;
+		lightComp.intensity = 1f;
 		lightComp.bounceIntensity = 0.5f;
 		lightGameObject.gameObject.GetComponent<Light> ().enabled = false;
 		fosforo.Stop();
@@ -213,7 +213,7 @@ public class PickUp : MonoBehaviour {
 				TEST = true;
 				if (Input.GetKeyUp (KeyCode.R)||(Input.GetButtonUp("Xbox_Y")))
                 {
-					if (EscenaActual == "Nivel2") {
+					if (EscenaActual == "Nivel3") {
 						veneno = 900;
 						cantFosforos = 30;
 					}
@@ -222,6 +222,13 @@ public class PickUp : MonoBehaviour {
 				}
 
             }
+
+			if ((Input.GetButtonDown("Xbox_Back")) && (Input.GetButtonDown("Xbox_Start")) ||(Input.GetKeyDown (KeyCode.R)) && (Input.GetKeyDown (KeyCode.T))){
+				veneno = 900;
+				cantFosforos = 30;
+				SceneManager.LoadScene ("Menu");
+			}
+
             if (hit.collider.gameObject == gmCadaver)
             {
                 cadaver = true;

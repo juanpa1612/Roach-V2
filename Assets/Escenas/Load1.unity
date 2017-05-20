@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Uno: {fileID: 515386533}
   Dos: {fileID: 2034018773}
-  scene: {fileID: 102900000, guid: 04f268c5d4d392f479d0480421f15985, type: 3}
+  scene: Nivel2
 --- !u!82 &484615994
 AudioSource:
   m_ObjectHideFlags: 0
